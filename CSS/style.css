@@ -1,0 +1,388 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container {width:375px; height:812px;background-color:#EEEBE5;}
+.safe_area {height: 44px;}
+.app_screen{ height: 680px; position:relative; }
+
+header {
+    margin: 0 auto;
+    height: 43px;
+    margin-top: 12px; 
+    width: 319px;
+    padding-left:7px;
+    padding-right:1px; 
+}
+header > h1 {
+    position: absolute;
+    left: 155px;
+    top: 8px;
+    font-weight: 600;
+    font-size: 18px;
+}
+header > a {float: left;}
+header > a > img {width:43px;} 
+header ul {float:right;}
+header ul > li {float:left; margin:9.5px 0;}
+header ul > li + li {margin-left:18px;}
+header ul > li > button {padding: 0; border:none; background: inherit;}
+header ul > li > button > img {width:24px;}
+
+.bank_acct{margin-top:33px;}
+.bank_acct_info{
+    margin: 0 auto;
+    width:279px;
+    height:155px;
+    background-color: white;
+    box-shadow: 0px 0px 16px rgba(226, 191, 66, 0.19);
+    border-radius: 12px;
+    text-align: center;
+}
+.bank_acct_info > h3 {
+    padding-top : 14px;
+    line-height: 21px;
+    color: #858585;
+}
+/* .bank_acct_info에 모든 버튼 스타일 초기화 */
+.bank_acct_info button {
+    padding: 0; 
+    border:none; 
+    background: inherit;
+}
+/* 잔액에 '원' 조절 */
+.bank_acct_info .balance {
+    margin: 26px 0;
+    letter-spacing: 2px;
+}
+/* 잔액 글자 조절 */
+.bank_acct_info .balance > span {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+/* 이체버튼 배치 */
+.bank_acct_info .transfer {
+    position:absolute;
+    top: 90px;
+    right: 65px;
+}
+/* 이체 버튼 글자 조절 */
+.transfer > button {
+    font-weight: 600;
+    letter-spacing: -0.24px;
+}
+.main_slide{margin:-8px 0;}
+.main_slide input[type=range] {
+    margin:0; 
+    -webkit-appearance: none; /*기본 스타일을 사용할지 말지 정하기 */
+    width: 202px;
+    height: 6px;
+    overflow:hidden;
+    background: #c4c4c4; /*바 선색, transparent 로 설정하면 배경생이랑 동일해진다. == 투명 */ 
+    border-radius: 3px;
+}
+.main_slide .main_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4px;
+    height: 17px;
+    border-radius: 2px;
+    background: #FF5F00;
+    box-shadow: -80vw 0 0 80vw #FFDB4C;  
+    cursor: pointer;
+}
+/* input 옆 차트 아이콘 */
+.bank_acct_info .chart{
+    position:absolute;
+    top:179px;
+    right:67px;    
+    cursor: pointer;
+}
+/* input 아래 텍스트 */
+.left_day_balnce{margin: 14px 0px 8px;}
+.left_day_balnce > span{
+    line-height: 21px;
+    color: #858585;
+}
+/* 대출광고 배치 */
+.notice {
+    position: absolute;
+    width: 262px;
+    height: 21px;
+    left: 43px;
+    top: 255px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
+.notice > a{
+    text-decoration: underline;
+}
+/* 사용내역 배치 */
+.bank_use_history{
+    position: absolute;
+    top: 297px;
+    width: 375px;
+    height: 383px;
+    background-color: #F5F5F5;
+    box-shadow: 0px -5px 14px rgba(189, 144, 28, 0.08);
+    border-radius: 30px 30px 0px 0px; 
+    overflow:auto; 
+    transition: 0.5s; 
+}
+.bank_use_history::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+/*드래그 버튼*/ 
+.drag_btn {
+    position: absolute;
+    width:48px;
+    height:2.15px;
+    top:4.3px;
+    left: 162px;
+    background-color: #C4C4C4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.bank_use_history.wide  {
+    top:43px;
+    height: 637px;   
+  }
+/* saving box 배치 */
+.saving {
+    margin: 23px 37px 17px 30px;   
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    overflow-x: scroll;
+    overflow-y: hidden;         
+}
+/*saving scrollbar 숨기기*/
+.saving::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.saving.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+/* saving box item 배치 */
+.saving ul{
+    width:308px;
+    height: 49px;
+    display:flex;
+}
+.saving ul::after{content:""; display:block; clear:both;}
+.saving ul li{
+    width: 162px;
+    height: 47px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    position: relative;
+    background-color: #DADADA;
+}
+.saving ul li + li{
+    margin-left: 13px;
+}
+.saving ul li span{
+    display: block;
+    background: transparent;
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 18px;
+}
+.saving ul li span:first-child{
+    top: 5px;
+    left: 13px;
+}
+.saving ul li span:nth-child(2){
+    bottom: 5px;
+    left: 13px;;
+}
+.saving ul li:last-child img{
+    vertical-align:middle;
+    margin-right:5px;
+    display: inline-block;
+}
+/*각각의 저축의 퍼센트 만큼 배경색 채우기 JS필요?*/
+.saving li .fill_color{
+    width: 97px;
+    height: 100%;
+    background-color: #FF5F00;
+    border-radius: 6px 0 0 6px;
+}
+/*세부내역 box */
+.use_history_detail{
+    margin: 1px 37px 38px 36px;    
+}
+/*날짜 + 지출합계*/
+.date_total_out div{
+    margin-bottom: 8px; 
+    font-weight: bold;
+    line-height: 21px;}
+/*저금통 만들기*/
+.date_total_out div > span:last-child{
+    line-height: 21px;
+    color: #B4B4B4;
+}
+.date_total_out > li + li{
+    margin-top: 38px;
+}
+.date_total_out li div{
+    display: flex;
+    justify-content: space-between;    
+}
+.day_details li{    
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #DCDCDC;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 27px;
+    color: #444444;
+}
+/*지출관리 페이지*/
+.out_mgt > *{}
+.out_mgt{
+    display:none;
+    position:absolute; /*기준을 h1으로 잡음*/
+    top:-55px;
+    left:0px;
+    width:378px;
+    height:736px;
+    background-color: white;
+    overflow: auto;
+}
+.out_mgt.open{
+    display:block;    
+}
+.out_mgt::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.out_mgt section{
+    width:315px;
+    margin: 0 auto;
+}
+.fixed_header{
+    position: fixed;
+    width:377px;
+    height:113px;
+    background:white;
+}
+.fixed_header h1{
+    position: absolute;
+    top: 77px;
+    left:30px;
+    font-size: 24px;
+    line-height: 36px;
+}
+.fixed_header .close_btn{
+    position: absolute;
+    top:44px;
+    left:336px;
+    border:none; 
+    background: inherit;
+    cursor: pointer;
+}
+.out_mgt  h3{
+    display:inline-block;
+    font-size: 18px;
+    line-height: 27px;
+}
+.set_budget{
+    padding-top:129px;
+}
+.set_budget > span{
+    padding-left:78px;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FF5F00;
+}
+.out_slide input[type=range] {
+    width: 308px;
+    height: 9px;    
+    margin-top:28px;
+    overflow:hidden;
+    background: #c4c4c4; /*바 선색, transparent 로 설정하면 배경생이랑 동일해진다. == 투명 */ 
+    border-radius: 3px;
+}
+.out_slide .out_slider::-webkit-slider-thumb {
+    width: 4px;
+    height: 17px;
+    border-radius: 2px;
+    background: #FF5F00;
+    box-shadow: -80vw 0 0 80vw #FFDB4C;  
+    cursor: pointer;
+}
+.daily_report{
+    padding-top: 59px;
+}
+.monthly_out_pattern{
+    padding-top:46px;
+}
+#bar_graph{  
+    height: 198px;
+    width: 307px;
+}
+.out_category{
+    padding-top:14px;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 27px;
+}
+.graph{
+    border: 1px solid red;
+    position: relative;
+}
+#donut_graph{
+    width: 308px;
+}
+.donut_total_out{
+    position:absolute;
+    top:50%;
+    left:40%;
+}
+.out_category li{           
+    display:flex;
+    justify-content: space-between; 
+}
+.out_category li span{
+}
+.out_category li + li {
+    padding-top:10.77px;
+}
+.out_category img{
+    padding-right:25px;
+    width:24px;
+    vertical-align:middle;
+}
+.out_category li:nth-child(3) img{
+    width:18px;
+    padding-right:32px;
+}
+
+/*하단 메뉴*/
+nav{
+    background-color: #00C7A3;
+    height:76px;
+    margin:0 auto;  
+}
+nav ul{
+    overflow:hidden;
+    padding-left:40px;
+}
+nav ul li{
+    float:left;
+    padding: 24px 0 24px;;
+}
+nav ul li + li{
+    padding-left:60px;
+}
+
