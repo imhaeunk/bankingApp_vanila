@@ -177,7 +177,6 @@ header ul > li > button > img {width:24px;}
     height: 49px;
     display:flex;
 }
-.saving ul::after{content:""; display:block; clear:both;}
 .saving ul li{
     width: 162px;
     height: 47px;
@@ -190,7 +189,6 @@ header ul > li > button > img {width:24px;}
     margin-left: 13px;
 }
 .saving ul li span{
-    display: block;
     background: transparent;
     position: absolute;
     color: #FFFFFF;
@@ -205,11 +203,7 @@ header ul > li > button > img {width:24px;}
     bottom: 5px;
     left: 13px;;
 }
-.saving ul li:last-child img{
-    vertical-align:middle;
-    margin-right:5px;
-    display: inline-block;
-}
+
 /*각각의 저축의 퍼센트 만큼 배경색 채우기 JS필요?*/
 .saving li .fill_color{
     width: 97px;
@@ -338,7 +332,6 @@ header ul > li > button > img {width:24px;}
     line-height: 27px;
 }
 .graph{
-    border: 1px solid red;
     position: relative;
 }
 #donut_graph{
